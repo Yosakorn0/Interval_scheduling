@@ -11,7 +11,6 @@ from plots import (
     plot_exhaustive
 )
 
-
 def time_algorithm(func, intervals, trials=10):
     times = []
 
@@ -59,8 +58,8 @@ if __name__ == "__main__":
     # ===============================
     # PARAMETERS
     # ===============================
-    D = 100
-    alpha = 1
+    D = 10
+    alpha = 1 # change to 1 and 5 for other regimes
 
     # ===============================
     # GREEDY EXPERIMENTS (REQUIRED)
@@ -79,7 +78,7 @@ if __name__ == "__main__":
     for name, n, mean, std in greedy_results:
         print(f"{name} (n={n}): {mean:.6f} ± {std:.6f} seconds")
 
-    # 🔥 PLOTS FOR GREEDY
+    # PLOTS FOR GREEDY
     plot_greedy_runtime(greedy_results)
     plot_greedy_normalized(greedy_results)
 
@@ -100,5 +99,5 @@ if __name__ == "__main__":
     for n, mean, std in exhaustive_results:
         print(f"Exhaustive (n={n}): {mean:.6f} ± {std:.6f} seconds")
 
-    # 🔥 PLOT FOR EXHAUSTIVE
+    # PLOT FOR EXHAUSTIVE
     plot_exhaustive(exhaustive_results)
