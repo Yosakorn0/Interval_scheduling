@@ -8,7 +8,8 @@ from exhaustive import exhaustive_optimal
 from plots import (
     plot_greedy_runtime,
     plot_greedy_normalized,
-    plot_exhaustive
+    plot_exhaustive,
+    plot_exhaustive_normalized
 )
 
 def time_algorithm(func, intervals, trials=10):
@@ -101,3 +102,4 @@ if __name__ == "__main__":
 
     # PLOT FOR EXHAUSTIVE
     plot_exhaustive(exhaustive_results)
+    plot_exhaustive_normalized(exhaustive_results)

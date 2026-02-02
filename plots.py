@@ -61,3 +61,22 @@ def plot_exhaustive(results):
 
     plt.savefig(f"{IMAGE_DIR}/exhaustive_runtime.png", dpi=300, bbox_inches="tight")
     plt.close()
+
+def plot_exhaustive_normalized(results):
+    plt.figure()
+
+    xs = []
+    ys = []
+
+    for n, t, _ in results:
+        xs.append(n)
+        ys.append(t / (n * (2 ** n)))
+
+    plt.plot(xs, ys, marker="o")
+    plt.xlabel("n")
+    plt.ylabel(r"$t(n) / (n 2^n)$")
+    plt.title("Normalized Exhaustive Runtime")
+
+    plt.savefig(f"{IMAGE_DIR}/exhaustive_normalized.png",
+                dpi=300, bbox_inches="tight")
+    plt.close()
